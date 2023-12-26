@@ -1,0 +1,26 @@
+﻿@using PurpleBuzz.Models;
+@model List<Cards>;
+<!-- Start Aim -->
+<section class="banner-bg bg-white py-5">
+    <div class="container my-4">
+        <div class="row text-center">
+
+            @{
+                foreach (Cards cards in Model)
+                {
+                     <div class="objective col-lg-4">
+                <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-secondary shadow-lg">
+                    <i class="@cards.FilePath"></i>
+                </div>
+                <h2 class="objective-heading h3 mb-2 mb-sm-4 light-300">@cards.Title</h2>
+                <p class="light-300">@cards.Description</p>
+            </div>
+                }
+            }
+
+           
+
+        </div>
+    </div>
+</section>
+<!-- End Aim -->
