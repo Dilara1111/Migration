@@ -9,6 +9,7 @@ namespace PurpleBuzz.DAL
         : base(options) { }
         public DbSet<Cards>  Cards { get; set; }
         public DbSet<Contact> Contact { get; set; }
+        public DbSet<ContactMedia> ContactMedias { get; set; }
 
     }
 }

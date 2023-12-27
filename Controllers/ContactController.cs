@@ -14,13 +14,12 @@ namespace PurpleBuzz.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var ccontact = await _appDbContext.Contact.ToListAsync();
-
             AboutIndexViewModel model = new AboutIndexViewModel
             {
-                Contact = ccontact
+                Contact = await _appDbContext.Contact.FirstOrDefaultAsync(),
+                ContactMedia = await _appDbContext.ContactMedias.ToListAsync()
             };
-            return View(ccontact);
+            return View(model);
         }
     }
 }

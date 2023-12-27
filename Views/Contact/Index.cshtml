@@ -1,5 +1,5 @@
-﻿@using PurpleBuzz.Models;
-@model List<Contact>
+﻿@using PurpleBuzz.ViewModels.About;
+@model AboutIndexViewModel
 <!-- Start Banner Hero -->
 <section class="bg-light">
     <div class="container py-4">
@@ -22,31 +22,28 @@
 <!-- Start Contact -->
 <section class="container py-5">
 
-    <h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Create success campaign with us!</h1>
-    <h2 class="col-12 col-xl-8 h4 text-left regular-400">Elit, sed do eiusmod tempor </h2>
+    <h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">@Model.Contact.Title</h1>
+    <h2 class="col-12 col-xl-8 h4 text-left regular-400">@Model.Contact.Description1</h2>
     <p class="col-12 col-xl-8 text-left text-muted pb-5 light-300">
-        Incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-        gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Laboris
-        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-        in voluptate.
+        @Model.Contact.Description2
     </p>
 
     <div class="row pb-4">
         <div class="col-lg-4">
 
             @{
-                foreach (var item in Model)
+                foreach (var item in Model.ContactMedia)
                 {
                     <div class="contact row mb-4">
                         <div class="contact-icon col-lg-3 col-3">
                             <div class="py-3 mb-2 text-center border rounded text-secondary">
-                                <i class='display-6 bx bx-news'></i>
+                                <i class="display-6 @item.Icon"></i>
                             </div>
                         </div>
-                        <ul class="contact-info list-unstyled col-lg-9 col-9  light-300">
-                            <li class="h5 mb-0">Media Contact</li>
-                            <li class="text-muted">Mr. John Doe</li>
-                            <li class="text-muted">010-020-0340</li>
+                        <ul class="contact-info list-unstyled col-lg-9 col-9  light-300">7
+                            <li class="h5 mb-0">@item.Title</li>
+                            <li class="text-muted">@item.Description</li>
+                            <li class="text-muted">@item.Phone</li>
                         </ul>
                     </div>
                 }               

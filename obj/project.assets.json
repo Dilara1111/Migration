@@ -10692,11 +10692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\OneDrive - ITM STEP MMC\\Desktop\\Garage\\BackEnd\\PurpleBuzz\\PurpleBuzz.csproj",
+      "projectUniqueName": "C:\\Users\\User\\OneDrive - ITM STEP MMC\\Desktop\\Garage\\BackEnd\\New folder\\PurpleBuzz\\PurpleBuzz.csproj",
       "projectName": "PurpleBuzz",
-      "projectPath": "C:\\Users\\User\\OneDrive - ITM STEP MMC\\Desktop\\Garage\\BackEnd\\PurpleBuzz\\PurpleBuzz.csproj",
+      "projectPath": "C:\\Users\\User\\OneDrive - ITM STEP MMC\\Desktop\\Garage\\BackEnd\\New folder\\PurpleBuzz\\PurpleBuzz.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\OneDrive - ITM STEP MMC\\Desktop\\Garage\\BackEnd\\PurpleBuzz\\obj\\",
+      "outputPath": "C:\\Users\\User\\OneDrive - ITM STEP MMC\\Desktop\\Garage\\BackEnd\\New folder\\PurpleBuzz\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
