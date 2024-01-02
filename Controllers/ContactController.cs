@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PurpleBuzz.DAL;
-using PurpleBuzz.ViewModels.About;
+using PurpleBuzz.ViewModels.Contact;
 
 namespace PurpleBuzz.Controllers
 {
@@ -14,11 +14,12 @@ namespace PurpleBuzz.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            AboutIndexViewModel model = new AboutIndexViewModel
+            ContactIndexVM model = new ContactIndexVM
             {
                 Contact = await _appDbContext.Contact.FirstOrDefaultAsync(),
                 ContactMedia = await _appDbContext.ContactMedias.ToListAsync()
             };
+      
             return View(model);
         }
     }

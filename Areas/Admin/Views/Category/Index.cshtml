@@ -1,0 +1,32 @@
+﻿@using PurpleBuzz.Models
+@model List<Category>
+<div class="card">
+    <div class="card-body">        
+        <div class="d-flex">
+            <h5 class="card-title">Categories</h5>
+            <a asp-action="index" asp-controller="category" asp-area="admin" class="col-2 d-inline btn btn-outline-success">Create Category</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Title</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        foreach(var category in Model)
+                        {
+                            <tr>
+                                <th>@category.Id</th>
+                                <td>@category.Title</td>                                
+                            </tr>
+                        }
+                   }                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

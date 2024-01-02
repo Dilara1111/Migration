@@ -1,0 +1,37 @@
+﻿@using PurpleBuzz.Models
+@model List<RecentWork>
+<div class="card">
+    <div class="card-body">
+        <div>
+        <h5 class="card-title">Recent Work</h5>
+        <a asp-action="create" asp-controller="recentworks" asp-area="admin" class="col-2 d-inline btn btn-outline-success">Create</a>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">FilePath</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        foreach (var recentWork in Model)
+                        {
+                            <tr>
+                                <th scope="col">@recentWork.Id</th>
+                                <th scope="col">@recentWork.Title</th>
+                                <th scope="col">@recentWork.Description</th>
+                                <th scope="col">@recentWork.FilePath</th>
+                                <th><a asp-controller="recentworks" asp-action="update" asp-area="admin" asp-route-id="@recentWork.Id" class="btn btn-secondary">Update</a></th>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
