@@ -19,6 +19,7 @@ namespace PurpleBuzz.Areas.Admin.Controllers
             List<RecentWork> recentWorks = await _dbContext.RecentWorks.ToListAsync();
             return View(recentWorks);
         }
+        #region Creat
         [HttpGet]
         public async Task<IActionResult> Create()
         {
@@ -32,7 +33,7 @@ namespace PurpleBuzz.Areas.Admin.Controllers
             .AnyAsync(x => x.Title.ToLower().Trim() == recentWork.Title.ToLower().Trim());
             if (isExit)
             {
-                ModelState.AddModelError("Title", "Kateqoriya movcuddur");
+                ModelState.AddModelError("Title", "RecentWork movcuddur");
                 return View(recentWork);
             }
             await _dbContext.RecentWorks.AddAsync(recentWork);
@@ -40,7 +41,8 @@ namespace PurpleBuzz.Areas.Admin.Controllers
 
             return RedirectToAction(nameof(Index));  
         }
-
+        #endregion
+        #region Update
         [HttpGet]
         public async Task<IActionResult> Update(int id)
         {
@@ -93,5 +95,18 @@ namespace PurpleBuzz.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
 
         }
+        #endregion
+        #region Delete
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var dbRecentWork = await _dbContext.RecentWorks.FindAsync();
+            if(dbRecentWork == null) return NotFound();
+            _dbContext.RecentWorks.Remove(dbRecentWork);
+            await _dbContext.SaveChangesAsync();    
+            return RedirectToAction(nameof(Index));
+
+        }
+        #endregion
     }
 }

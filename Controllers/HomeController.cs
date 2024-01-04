@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PurpleBuzz.DAL;
-using PurpleBuzz.ViewModels.About;
 using PurpleBuzz.ViewModels.Home;
 
 namespace PurpleBuzz.Controllers
